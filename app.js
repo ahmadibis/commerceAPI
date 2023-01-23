@@ -42,7 +42,6 @@ app.use(rateLimit({
 app.use(xss())
 app.use(mongoSanitize())
 
-app.use(morgan("tiny"))
 //we can now have access to it from req.cookies, everytime the user/browser sends a request to our server 
 //we can then use our isValidToken from our util to verify the token 
 //WITH THIS PARAMETER WE ARE SIGNINING IT SO to access a signed cookie it is from req.signedCookies
@@ -64,7 +63,7 @@ app.use(notFoundMiddleware)
 //we technically invoke this in existing route when throwing errors 
 app.use(errorHandlerMiddleware)
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000;
 
 const start = async () => {
     
